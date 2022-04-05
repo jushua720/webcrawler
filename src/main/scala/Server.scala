@@ -6,7 +6,7 @@ import cats.effect.IO
 
 object Server {
 
-  val httpApp = Router("/crawler" -> (new CrawlerAPI).routes).orNotFound
+  val httpApp = Router("/v1/crawler" -> (new CrawlerAPI).routes).orNotFound
 
   val program = for {
     config <- Configuration.load()
